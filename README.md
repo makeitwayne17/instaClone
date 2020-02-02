@@ -3,14 +3,14 @@ Clone of instagram using react and redux. Built only the frontend. Includes addi
 
 ## Getting Started
 
-Clone the repo then go into cloned floder. 
-Type in ```npm install``` 
-then type in ```npm start```
-Webpage should then auto open
+1) Clone the repo then go into cloned floder. 
+2) Type in ```npm install``` 
+3) then type in ```npm start```
+4) Webpage should then auto open
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Link:
 
 ## Built With
 

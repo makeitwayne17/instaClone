@@ -1,10 +1,10 @@
 # instaClone
 Clone of instagram using react and redux. Built only the frontend. 
 Includes: 
-- adding a comment :white_check_mark:
-- liking a comment :white_check_mark:
-- reply to a comment :x:
-- like a replied comment :x:
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `adding a comment` :white_check_mark:
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `liking a comment` :white_check_mark:
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `reply to a comment` :x:
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `like a replied comment` :x:
 
 Two viewing modes: normal portrait for viewing pictures and landscape version to view comments.
 

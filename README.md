@@ -1,5 +1,12 @@
 # instaClone
-Clone of instagram using react and redux. Built only the frontend. Includes adding a comment, liking a comment, reply to a comment and like a replied comment. Two viewing modes: normal portrait for viewing pictures and landscape version to view comments.
+Clone of instagram using react and redux. Built only the frontend. 
+Includes: 
+- adding a comment :white_check_mark:
+- liking a comment :white_check_mark:
+- reply to a comment :x:
+- like a replied comment :x:
+
+Two viewing modes: normal portrait for viewing pictures and landscape version to view comments.
 
 ## Getting Started
 

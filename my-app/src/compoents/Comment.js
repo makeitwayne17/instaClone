@@ -13,6 +13,8 @@ class Comment extends Component {
       likeCount: 0,
       isLiked: false,
       value: '',
+      comment1: false,
+      comment2: false,
       commentName: ''
     };
     this.likeClicked = this.likeClicked.bind(this);
@@ -90,6 +92,8 @@ class Comment extends Component {
       postDescription,
       comments,
       likeCount,
+      comment1,
+      comment2,
       isLiked
     } = this.state;
     console.log('below is the props');
@@ -149,6 +153,14 @@ class Comment extends Component {
                 )}
               </Repeat> */}
 
+              <img
+                onClick={this.commentLiked1}
+                className="commentLikeButton"
+                alt=""
+                src={
+                  comment2 === true ? './likedHeart.png' : './emptyHeart.png'
+                }
+              />
               <p className="postCommentTextWords">
                 <b>
                   {
@@ -166,6 +178,14 @@ class Comment extends Component {
                   ].commentText
                 }
               </p>
+              <img
+                onClick={this.commentLiked2}
+                className="commentLikeButton"
+                alt=""
+                src={
+                  comment2 === true ? './likedHeart.png' : './emptyHeart.png'
+                }
+              />
               <p className="postCommentTextWords">
                 <b>
                   {

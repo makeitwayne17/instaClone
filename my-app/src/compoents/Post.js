@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 
 class Post extends Component {
   constructor(props) {
@@ -11,9 +10,19 @@ class Post extends Component {
       postDescription: '',
       comments: '',
       likeCount: 0,
-      isLiked: false
+      isLiked: false,
+      value: '',
+      commentName: '',
+      comment2: false,
+      comment1: false,
+      id: 0
     };
     this.likeClicked = this.likeClicked.bind(this);
+    this.commentClicked = this.commentClicked.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.commentLiked1 = this.commentLiked1.bind(this);
+    this.commentLiked2 = this.commentLiked2.bind(this);
   }
   likeClicked() {
     this.setState(state => ({
@@ -25,8 +34,46 @@ class Post extends Component {
           ? this.state.likeCount + 1
           : this.state.likeCount - 1
     }));
+
     console.log(this.state.likeCount);
   }
+
+  commentLiked1() {
+    this.setState(state => ({
+      comment1: !state.comment1
+    }));
+
+    console.log('comment1' + this.state.comment1);
+  }
+
+  commentLiked2() {
+    this.setState(state => ({
+      comment2: !state.comment2
+    }));
+
+    console.log('comment1' + this.state.comment1);
+  }
+
+  commentClicked() {
+    localStorage.setItem('defaultPage', this.state.id);
+    console.log('to comment page');
+    window.location.reload(this.state.id);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    console.log('A name was submitted: ' + this.state.value);
+    console.log(this.state.commentName);
+    var obj = JSON.parse(localStorage.getItem(this.state.commentName));
+    obj.push({ user: 'Current User', commentText: this.state.value });
+    localStorage.setItem(this.state.commentName, JSON.stringify(obj));
+    this.setState({ value: '' });
+    //event.preventDefault();
+  }
+
   render() {
     let post = this.props.post;
     // extract variables from state
@@ -37,14 +84,26 @@ class Post extends Component {
       postDescription,
       comments,
       likeCount,
-      isLiked
+      isLiked,
+      comment1,
+      comment2,
+      id
     } = this.state;
-    const buffer = [];
-    buffer.push(post.comments[0]);
-    buffer.push(post.comments[1]);
-
     console.log('below is the props');
     console.log(this.props.post);
+    this.state.id = post.id;
+
+    this.state.commentName = 'currentComments' + parseInt(post.id);
+
+    console.log(this.state.commentName);
+    console.log(
+      localStorage.getItem(this.state.commentName) +
+        this.state.commentName +
+        parseInt(
+          JSON.parse(localStorage.getItem(this.state.commentName)).length - 2
+        ) +
+        JSON.parse(localStorage.getItem(this.state.commentName))[1].user
+    );
 
     return (
       <div className="nonHeaderSection">
@@ -74,20 +133,87 @@ class Post extends Component {
                 alt=""
                 src={isLiked === true ? './likedHeart.png' : './emptyHeart.png'}
               />
-              <img className="commentButton" alt="" src="./comment.png" />
+              <img
+                onClick={this.commentClicked}
+                className="commentButton"
+                alt=""
+                src="./comment.png"
+              />
               <p className="likeText">
-                Liked Count: {post.likeCount + this.state.likeCount}
+                Liked Count: {this.state.likeCount + post.likeCount}
               </p>
             </div>
+
             <div className="postCommentText">
-              <p>
-                Hello: {buffer[buffer.length - 2].user} :{' '}
-                {buffer[buffer.length - 2].commentText}
+              <img
+                onClick={this.commentLiked1}
+                className="commentLikeButton"
+                alt=""
+                src={
+                  comment1 === true ? './likedHeart.png' : './emptyHeart.png'
+                }
+              />
+              <p className="postCommentTextWords">
+                <b>
+                  {
+                    JSON.parse(localStorage.getItem(this.state.commentName))[
+                      JSON.parse(localStorage.getItem(this.state.commentName))
+                        .length - 2
+                    ].user
+                  }{' '}
+                </b>
+                :{' '}
+                {
+                  JSON.parse(localStorage.getItem(this.state.commentName))[
+                    JSON.parse(localStorage.getItem(this.state.commentName))
+                      .length - 2
+                  ].commentText
+                }
               </p>
-              <p>
-                Hello: {buffer[buffer.length - 1].user} :{' '}
-                {buffer[buffer.length - 1].commentText}
+              <img
+                onClick={this.commentLiked2}
+                className="commentLikeButton"
+                alt=""
+                src={
+                  comment2 === true ? './likedHeart.png' : './emptyHeart.png'
+                }
+              />
+              <p className="postCommentTextWords">
+                <b>
+                  {
+                    JSON.parse(localStorage.getItem(this.state.commentName))[
+                      JSON.parse(localStorage.getItem(this.state.commentName))
+                        .length - 1
+                    ].user
+                  }{' '}
+                </b>
+                :{' '}
+                {
+                  JSON.parse(localStorage.getItem(this.state.commentName))[
+                    JSON.parse(localStorage.getItem(this.state.commentName))
+                      .length - 1
+                  ].commentText
+                }
               </p>
+              <form
+                style={{
+                  width: '90%',
+                  maxWidth: '90%',
+                  float: 'left',
+                  bottom: '3px'
+                }}
+                onSubmit={this.handleSubmit}
+              >
+                <label>
+                  <input
+                    className="formInput"
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                  />
+                </label>
+                <input type="submit" value="Post" />
+              </form>
             </div>
           </div>
         </div>

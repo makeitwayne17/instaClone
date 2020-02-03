@@ -10,30 +10,38 @@ const posts = [
     comments: [
       {
         user: 'Steven',
-        commentText: 'Nice pic!'
+        commentText: 'Nice pic!',
+        liked: true,
+        id: 1
       },
       {
         user: 'Johnny',
-        commentText: 'I am a doctor!'
+        commentText: 'I am a doctor!',
+        liked: false,
+        id: 2
       }
     ]
   },
   {
     id: 2,
-    userName: 'kobebryant',
-    userPic: '',
-    userPostPic: '',
-    postDescription: 'rest in peace',
+    userName: 'johnsmith',
+    userPic: './face2.png',
+    userPostPic: './postPic2.jpg',
+    postDescription: 'night',
     isLiked: true,
-    likeCount: 7,
+    likeCount: 4,
     comments: [
       {
         user: 'David',
-        commentText: 'RIP'
+        commentText: 'beautiful',
+        liked: false,
+        id: 1
       },
       {
         user: 'Kevin',
-        commentText: 'Mamba Out :('
+        commentText: 'Amazing',
+        liked: false,
+        id: 2
       }
     ]
   }

@@ -9,7 +9,7 @@
 
 /* For the Headers */
 .navbar {
-  background-color: green;
+  background-color: white;
   height: 77px;
   width: 100%;
   border-bottom: 1px solid #c7c7c7;
@@ -24,7 +24,7 @@
 
 /* For the none Header Section */
 .nonHeaderSection {
-  background-color: lightblue;
+  background-color: whitesmoke;
   /* top: 125px;*/
   height: 100%;
   min-height: 100%;
@@ -35,16 +35,17 @@
 /* For the post section */
 .post {
   display: inline-block;
-  background-color: lightgreen;
+  background-color: white;
   height: 1000px;
   max-height: 75%;
   width: 500px;
   max-width: 100%;
+  border: 1px solid #8a8a8a;
 }
 
 .postHeader {
   width: 100%;
-  background-color: lightcoral;
+  background-color: white;
   height: 65px;
   max-height: 10%;
   top: 0px;
@@ -73,7 +74,6 @@
   max-height: 65%;
   width: 100%;
   overflow: hidden;
-  background-color: red;
 }
 
 .postPictureImg {
@@ -89,14 +89,12 @@
   max-height: 25%;
   height: 25%;
   width: 100%;
-  background-color: yellow;
 }
 
 .postCommentButtonsContainer {
   max-height: 27%;
   height: 27%;
   width: 100%;
-  background-color: teal;
   text-align: left;
 }
 
@@ -106,6 +104,7 @@
   margin-top: 5px;
   float: left;
 }
+
 .commentButton {
   max-height: 70%;
   margin-left: 2.5%;
@@ -124,5 +123,127 @@
   max-height: 73%;
   height: 73%;
   width: 100%;
+  max-width: 100%;
   background-color: white;
+  text-align: left;
+  bottom: 5px;
+}
+
+.commentLikeButton {
+  max-height: 25%;
+  margin-left: 2.5%;
+  margin-top: 5px;
+  left: 0px;
+  max-width: 25%;
+  float: left;
+  align-self: left;
+}
+.postCommentTextWords {
+  padding-left: 2.5%;
+  left: 0px;
+  max-width: 75%;
+}
+
+.formInput {
+  max-width: 75%;
+  width: 75%;
+  float: center;
+}
+/*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+/* For the Comment page */
+
+/* For the comment section */
+.comment {
+  display: inline-block;
+  background-color: white;
+  height: 800px;
+  max-height: 55%;
+  width: 800px;
+  max-width: 100%;
+  border: 1px solid #8a8a8a;
+  margin-top: 7%;
+}
+
+.commentPicture {
+  height: 100%;
+  max-height: 100%;
+  width: 60%;
+  max-width: 60%;
+  left: 0px;
+  float: left;
+  background-color: pink;
+}
+
+.commentPictureImg {
+  border: thin;
+  height: 100%;
+  max-height: 480px;
+  width: 100%;
+  max-width: 480px;
+  left: 0px;
+}
+
+.textContainer {
+  height: 100%;
+  max-height: 100%;
+  width: 40%;
+  right: 0px;
+  top: 0px;
+  float: left;
+  background-color: green;
+}
+
+.likeButtonInCommentPage {
+  max-height: 30px;
+  margin-left: 2.5%;
+  margin-top: 5px;
+  float: left;
+}
+
+.commentCommentButtonsContainer {
+  max-height: 10%;
+  height: 10%;
+  width: 100%;
+  text-align: left;
+}
+
+.commentCommentSection {
+  max-height: 90%;
+  height: 90%;
+  width: 100%;
+  text-align: left;
 }

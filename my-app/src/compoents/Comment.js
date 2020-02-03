@@ -130,7 +130,7 @@ class Comment extends Component {
             <div className="commentCommentButtonsContainer">
               <img
                 onClick={this.backClicked}
-                className="commentButton"
+                className="commentCommentButton"
                 alt=""
                 src="./back.png"
               />
@@ -155,10 +155,10 @@ class Comment extends Component {
 
               <img
                 onClick={this.commentLiked1}
-                className="commentLikeButton"
+                className="likeButtonInCommentPageSection"
                 alt=""
                 src={
-                  comment2 === true ? './likedHeart.png' : './emptyHeart.png'
+                  comment1 === true ? './likedHeart.png' : './emptyHeart.png'
                 }
               />
               <p className="postCommentTextWords">
@@ -180,7 +180,7 @@ class Comment extends Component {
               </p>
               <img
                 onClick={this.commentLiked2}
-                className="commentLikeButton"
+                className="likeButtonInCommentPageSection"
                 alt=""
                 src={
                   comment2 === true ? './likedHeart.png' : './emptyHeart.png'
@@ -222,6 +222,14 @@ class Comment extends Component {
                 </label>
                 <input type="submit" value="Post" />
               </form>
+            </div>
+
+            {/* This will be the top of the post */}
+            <div className="commentHeader">
+              <img alt="" src={post.userPic} className="commentProfileImg" />
+              <div className="postProfileName">
+                <p style={{ fontWeight: 'bold' }}>{post.userName}</p>
+              </div>
             </div>
           </div>
         </div>
